@@ -3,14 +3,15 @@
   <head>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157298816-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157298816-1"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
 	gtag('config', 'UA-157298816-1');
-	</script>
+	</script> -->
+	
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -813,102 +814,67 @@
 	<script src="js/leon.js"></script>
 	<script src="js/util.js"></script>
  	<script>
-    
-	let leon, controll;
+    let leon;
 
-    function init() {
-        generateCanvas();
+	function init() {
+		
+		var wCanvas = $(window).width() / 12;
 
-        controll = {
-            color: {},
-            align: {},
-            drawing: () => {
-                let i, total = leon.drawing.length;
-                for (i = 0; i < total; i++) {
-                    TweenMax.killTweensOf(leon.drawing[i]);
-                    TweenMax.fromTo(leon.drawing[i], 1.6, {
-                        value: 0
-                    }, {
-                        delay: i * 0.2,
-                        value: 1,  //speed
-                        ease: Power4.easeOut
-                    });
-                }
-            }
-        };
+	    canvas = document.createElement('canvas');
+	    document.body.appendChild(canvas);
+	    ctx = canvas.getContext("2d");
 
-        leon = new LeonSans({
-            text: 'BIMSHOW.IO',
-            color: ['#342f2e'],
-            size: getSize(120),
+	    canvas.width = sw * pixelRatio;
+	    canvas.height = sh * pixelRatio;
+	    canvas.style.width = sw + 'px';
+	    canvas.style.height = sh + 'px';
+	    ctx.scale(pixelRatio, pixelRatio);
+
+	    leon = new LeonSans({
+	        text: 'BIMSHOW.IO',
+            color: ['#ffffff'],
+            size: wCanvas,
             weight: 300
-        });
+	    });
 
-        const gui = new dat.GUI();
-       dat.GUI.toggleHide();
-        gui.add(leon, 'text');
-        gui.add(leon, 'size', 20, 1000);
-        gui.add(leon, 'weight', 1, 900);
-        gui.add(leon, 'tracking', -3, 10);
-        gui.add(leon, 'leading', -8, 10);
-        const alignControll = gui.add(controll, 'align', [ 'left', 'center', 'right'] );
-        gui.add(leon, 'maxWidth', 0, 2000);
-        gui.add(leon, 'breakWord');
-        gui.add(controll, 'drawing');
-        const colorControll = gui.add(controll, 'color', [ 'black', 'white', 'yellow', 'red - blue', 'mixed'] );
+	    let i, total = leon.drawing.length;
+		for (i = 0; i < total; i++) {
+		    TweenMax.fromTo(leon.drawing[i], 1.6, {
+		        value: 0
+		    }, {
+		        delay: i * 0.05,
+		        value: 1,
+		        ease: Power4.easeOut
+		    });
+		}
 
-        alignControll.onChange((value) => {
-            leon.align = value;
-        });
-        alignControll.setValue('left');
+	    requestAnimationFrame(animate);
+	}
 
-        colorControll.onChange((value) => {
-            if (value == 'black') {
-                document.body.style.backgroundColor = '#f0f0f0';
-                leon.color = ['#342f2e'];
-            } else if (value == 'white') {                    
-                //document.body.style.backgroundColor = '#000000';
-                leon.color = ['#ffffff'];
-            } else if (value == 'yellow') {
-                document.body.style.backgroundColor = '#57c4e2';
-                leon.color = ['#ffd93c'];
-            } else if (value == 'red - blue') {
-                document.body.style.backgroundColor = '#ffffff';
-                leon.color = [['#ff94a7', '#1c7dd1']];
-            } else if (value == 'mixed') {
-                document.body.style.backgroundColor = '#ffffff';
-                leon.color = ['#ff5892', '#7bc92f', ['#3eda4e', '#f4bf14', '#fa314c', '#074aee'], '#ffd93c', '#c0008b'];
-            }
-        });
-        colorControll.setValue('white');
-        controll.drawing()
-        requestAnimationFrame(animate);
-		    
+	function animate(t) {
+	    requestAnimationFrame(animate);
 
-        function animate(t) {
-            requestAnimationFrame(animate);
+	    ctx.clearRect(0, 0, sw, sh);
 
-            ctx.clearRect(0, 0, sw, sh);
+	    const x = (sw - leon.rect.w) / 2;
+	    /*const y = (sh - leon.rect.h) / 2;*/
+	    const y = 300;
+	    leon.position(x, y);
 
-            const x = (sw - leon.rect.w) / 2;
-            const y = 300;
-            leon.position(x + moveX, y + moveY);
-
-            leon.draw(ctx);
-        }
-        
-
-    };
+	    leon.draw(ctx);	    
+	}
+	
     
     window.onload = () => {       
         init();         
+		
+		// pour effacer				
         setTimeout(function(){        	
-        		// pour effacer
         	$('canvas').fadeOut( "slow", function() {
 
-        		/*$(".bimshow-logo-loading").removeClass("hidden");
-        		$(".loading-invisible p").removeClass("hidden");
-*/
+        		//$(".bimshow-logo-loading").removeClass("hidden");
+        		//$(".loading-invisible p").removeClass("hidden");
+
 				// Animation complete.
 				$('canvas:nth-of-type(1)').remove();				
 		  	});
@@ -965,8 +931,50 @@
 
 	</script>
 
+	<!-- cookie management -->    
+	<script type="text/javascript" src="node_modules/tarteaucitronjs/tarteaucitron.js"></script>
+    <script type="text/javascript">
+    tarteaucitron.init({
+	  "privacyUrl": "", /* Privacy policy url */
 
-    
+	  "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+	  "cookieName": "tarteaucitron", /* Cookie name */
+
+	  "orientation": "bottom", /* Banner position (top - bottom) */
+	  "showAlertSmall": true, /* Show the small banner on bottom right */
+	  "cookieslist": true, /* Show the cookie list */
+
+	  "adblocker": false, /* Show a Warning if an adblocker is detected */
+	  "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+	  "highPrivacy": true, /* Disable auto consent */
+	  "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+	  "removeCredit": false, /* Remove credit link */
+	  "moreInfoLink": true, /* Show more info link */
+	  "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+
+	  //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+                      
+	  "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
+    });
+    </script>
+
+    <!-- google analitics with tarteaucitronjs -->
+    <script type="text/javascript">
+    tarteaucitron.user.gtagUa = 'UA-157298816-1';
+    tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+    (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+    </script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+	<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e313ea1b6f15c00"></script> -->
+	<!-- <script type="text/javascript">
+    	(tarteaucitron.job = tarteaucitron.job || []).push('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e313ea1b6f15c00');
+    </script> -->
+	<script type="text/javascript">
+        tarteaucitron.user.addthisPubId = 'ra-5e313ea1b6f15c00';
+        (tarteaucitron.job = tarteaucitron.job || []).push('addthis');
+    </script>
 
 	<!-- lightBox effect -->
 	<script src="node_modules/baguettebox.js/dist/baguetteBox.min.js"></script>
