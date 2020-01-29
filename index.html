@@ -828,7 +828,7 @@
 
 	    let i, total = leon.drawing.length;
 		for (i = 0; i < total; i++) {
-			console.log(j++);
+			
 		    TweenMax.fromTo(leon.drawing[i], 1.6, {
 		        value: 0
 		    }, {
@@ -843,8 +843,9 @@
 	}
 
 	function animate(t) {
+		// compteur pour stoper l'animation
 		j++;
-		console.log(j);
+		
 		if(j < 60 ) requestAnimationFrame(animate);
 		else{
 
@@ -917,6 +918,8 @@
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		
 			var rand = getRandomInt(4);
+			
+			console.log("mobile version ");
 			console.log(rand);
 
 			if(rand == 0) $('.typeEffect').append('faîtes une belle présentation');
