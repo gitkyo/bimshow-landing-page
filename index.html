@@ -82,7 +82,7 @@
 
 
 	<!-- Start preloading -->	
-	<div id="loading" class="loading-invisible">
+	<div id="loading" class="loading-visible">
 		<!-- <i class="pe-7s-refresh pe-spin pe-3x pe-va"></i><br /> -->
 		<!-- <div class="bimshow-logo-loading hidden">
 	        <div class="square square1" style="border-color:#FFCA28"></div>
@@ -804,9 +804,9 @@
 	<script src="js/util.js"></script>
  	<script>
     let leon;
+	var j=0;
 
 	function init() {
-		
 		var wCanvas = $(window).width() / 12;
 
 	    canvas = document.createElement('canvas');
@@ -828,6 +828,7 @@
 
 	    let i, total = leon.drawing.length;
 		for (i = 0; i < total; i++) {
+			console.log(j++);
 		    TweenMax.fromTo(leon.drawing[i], 1.6, {
 		        value: 0
 		    }, {
@@ -838,10 +839,20 @@
 		}
 
 	    requestAnimationFrame(animate);
+		    
 	}
 
 	function animate(t) {
-	    requestAnimationFrame(animate);
+		j++;
+		console.log(j);
+		if(j < 60 ) requestAnimationFrame(animate);
+		else{
+
+				// Animation complete.
+				$('canvas').fadeOut( "slow", function() {
+					$('canvas:nth-of-type(1)').remove();
+		  		});
+		}
 
 	    ctx.clearRect(0, 0, sw, sh);
 
@@ -850,7 +861,7 @@
 	    const y = 300;
 	    leon.position(x, y);
 
-	    leon.draw(ctx);	    
+	    leon.draw(ctx);
 	}
 	
     
@@ -858,7 +869,7 @@
         init();         
 		
 		// pour effacer				
-        setTimeout(function(){        	
+        /*setTimeout(function(){        	
         	$('canvas').fadeOut( "slow", function() {
 
         		//$(".bimshow-logo-loading").removeClass("hidden");
@@ -867,11 +878,11 @@
 				// Animation complete.
 				$('canvas:nth-of-type(1)').remove();				
 		  	});
-        },3000)	
+        },3000)	*/
     };   
         
 	//toggle spinner 
-	document.getElementById("loading").className = "loading-visible";
+	//document.getElementById("loading").className = "loading-visible";
 	var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};			
 	var oldLoad = window.onload;
 	var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
