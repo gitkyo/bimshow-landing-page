@@ -1,0 +1,109 @@
+.bimshow-logo-loading {
+    position: relative;
+    margin : 0 auto;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    box-sizing: border-box;
+}
+
+.square1 {
+    animation: leftSquare 2s infinite;
+    opacity: 1;
+}
+
+.square2 {
+    border-width: 3px;
+    animation: middleSquare 2s infinite;
+    opacity: 1;
+}
+
+.square3 {
+    animation: rightSquare 2s infinite;
+    opacity: 1;
+}
+
+@keyframes flatYourself {
+    0% {height: 0;}
+    0% {width: 100%;}
+    0% {}
+    0% {}
+    0% {}
+}
+
+@keyframes rightSquare {
+    0% {
+        left: 0%;
+        transform: rotate(45deg);
+    }
+
+    25% {
+        left: 35%;
+        transform: rotate(45deg);
+    }
+
+    50% {
+        left: 35%;
+        transform: rotate(135deg);
+    }
+
+    75% {
+        left: 0%;
+        transform: rotate(135deg);
+    }
+
+    100% {
+        left: 0%;
+        transform: rotate(225deg);
+    }
+}
+
+@keyframes leftSquare {
+    0% {
+        left: 0%;
+        transform: rotate(45deg);
+    }
+
+    25% {
+        left: -35%;
+        transform: rotate(45deg);
+    }
+
+    50% {
+        left: -35%;
+        transform: rotate(135deg);
+    }
+
+    75% {
+        left: 0%;
+        transform: rotate(135deg);
+    }
+
+    100% {
+        left: 0%;
+        transform: rotate(225deg);
+    }
+}
+
+@keyframes middleSquare {
+    0% {
+        left: 0%;
+        transform: rotate(45deg);
+    }
+    25% {}
+    50% {}
+    75% {transform: rotate(45deg);}
+    100% {
+        left: 0%;
+        transform: rotate(135deg);
+    }
+}
