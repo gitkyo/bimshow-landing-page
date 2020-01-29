@@ -38,6 +38,9 @@ CSS structure
 div.navbar-right{
 	visibility: hidden;
 }
+div.tarteaucitronAlertSmallBottom{
+	display: none !important;
+}
 .typeEffect, .typed-cursor, .typed-cursor--blink{
 	display: inline !important;
 }
