@@ -1199,7 +1199,10 @@ Custom responsive
 		min-height: 600px;
 	}
 	.pe-feature {
-    	margin: 0 20px 240px 10px;
+    	margin: 0 20px 0px 10px;
+	}
+	.feature-box li, .feature-box a, .feature-box p{
+		padding-left: 100px;
 	}
 	.subscribe-button {
 	    width: 100%;
