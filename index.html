@@ -808,8 +808,10 @@
 
 	function init() {
 		var wCanvas = $(window).width() / 12;
-generateCanvas();
-	    /*canvas = document.createElement('canvas');
+		
+		generateCanvas();
+	    /*
+	    canvas = document.createElement('canvas');
 	    document.body.appendChild(canvas);
 	    ctx = canvas.getContext("2d");
 
@@ -817,7 +819,8 @@ generateCanvas();
 	    canvas.height = sh * pixelRatio;
 	    canvas.style.width = sw + 'px';
 	    canvas.style.height = sh + 'px';
-	    ctx.scale(pixelRatio, pixelRatio);*/
+	    ctx.scale(pixelRatio, pixelRatio);
+	    */
 
 	    leon = new LeonSans({
 	        text: 'BIMSHOW.IO',
@@ -925,7 +928,7 @@ generateCanvas();
 		
 			var rand = getRandomInt(4);
 			
-			alert("mobile version");
+			$("h1").html("mobile version")
 			console.log("mobile version ");
 			console.log(rand);
 
@@ -935,7 +938,8 @@ generateCanvas();
 			else if(rand == 3) $('.typeEffect').append('Obtenez plus de ventes');
 		
 		}else{
-			alert("Desktop version ");
+			console.log("Desktop version");
+			$("h1").html("Desktop version")
 			//start typed js function
 			var typed = new Typed('.typeEffect', options);
 		}
