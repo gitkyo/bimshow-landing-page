@@ -58,6 +58,9 @@ canvas{
     z-index: 9999999999;
     /*cursor: none;*/
 }
+h3.pricingTitle{
+	
+}
 /*
 Home
 =========================== */
@@ -778,6 +781,7 @@ footer{
 Heading
 =========================== */
 .heading{
+	width: 100%;
 	font-size:36px;
 	line-height:48px;
 	position:relative;
@@ -1136,11 +1140,8 @@ Custom responsive
 	}
 	
 }
-/*@media (max-width: 990px){
-	h3.pricingTitle{
-		padding: 0 0 25px 0;
-	}
-}*/
+
+
 @media (min-width: 768px) and (max-width: 990px){
 	.navbar.navbar-fixed-top{
 		position: relative;
