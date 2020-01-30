@@ -895,27 +895,8 @@
     <!-- fin intro bimshow -->
 
 	<!-- typeText effect -->	
-	<script type="module">
-		//Make pretty mockups for your projects & Obtenez plus de ventes, remportez plus de projets, attirez plus de clients, faîtes une belle présentation
-		import Typed from './node_modules/typed.js/src/typed.js';
-		var options = {
-			strings: [
-		    'Obtenez plus de ventes',
-		    'remportez plus de projets',
-		    'attirez plus de clients',
-		    'faîtes une belle présentation'
-		  ],
-		  //stringsElement: '#typed-strings',
-		  loop: true,
-		  startDelay: 100,
-		  backDelay: 1500,
-		  //strings: ['<i>First</i> sentence.', '&amp; Make pretty mockups for your projects.', '&amp; Make pretty mockups for your projects.'],
-		  typeSpeed: 40
-		};
-		
-		function getRandomInt(max) {
-		  return Math.floor(Math.random() * Math.floor(max));
-		}
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+	<script type="text/javascript">
 
 		window.mobilecheck = function() {
 		  var check = false;
@@ -923,12 +904,22 @@
 		  return check;
 		};
 
+		function getRandomInt(max) {
+		  return Math.floor(Math.random() * Math.floor(max));
+		}
+
+
+		//Make pretty mockups for your projects & Obtenez plus de ventes, remportez plus de projets, attirez plus de clients, faîtes une belle présentation
+		//import Typed from './node_modules/typed.js/src/typed.js';
+		
+		
+		
 		//test mobile version
 		if( mobilecheck() ){
 		
 			var rand = getRandomInt(4);
 			
-			$("h1").html("mobile version")
+			//$("h1").html("mobile version")
 			console.log("mobile version ");
 			console.log(rand);
 
@@ -938,10 +929,25 @@
 			else if(rand == 3) $('.typeEffect').append('Obtenez plus de ventes');
 		
 		}else{
-			console.log("Desktop version");
-			$("h1").html("Desktop version")
+			var options = {
+				strings: [
+				'Obtenez plus de ventes',
+				'remportez plus de projets',
+				'attirez plus de clients',
+				'faîtes une belle présentation'
+				],
+				//stringsElement: '#typed-strings',
+				loop: true,
+				startDelay: 100,
+				backDelay: 1500,
+				//strings: ['<i>First</i> sentence.', '&amp; Make pretty mockups for your projects.', '&amp; Make pretty mockups for your projects.'],
+				typeSpeed: 40
+			};
+
+			//console.log("Desktop version");
+			//$("h1").html("Desktop version")
 			//start typed js function
-			//var typed = new Typed('.typeEffect', options);
+			var typed = new Typed('.typeEffect', options);
 		}
 
 	</script>
