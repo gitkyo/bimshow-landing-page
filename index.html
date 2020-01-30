@@ -74,6 +74,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.js"></script>    
     <script src="./js/forme.js" type="text/javascript"></script>
+    <!-- lazy load to improv perf : https://github.com/aFarkas/lazysizes -->
+    <script src="./js/lazysizes.min.js" type="text/javascript" async=""></script>
   </head>
 
   <body>
@@ -105,7 +107,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://bimshow.io/">BIMSHOW<img src="img/logo-1.png" alt="" /></a>
+					<a class="navbar-brand" href="http://bimshow.io/">BIMSHOW<img data-src="img/logo-1.png" class="lazyload"/></a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -146,25 +148,25 @@
 										<!-- <li>
 											<div class="video-container">
 												<div class="youTubeEmbed"></div>
-											</div>
+											</div> 
 										</li> -->
-										<li><img src="img/slider/img1.jpg" alt="" /></li>
-										<li><img src="img/slider/img2.jpg" alt="" /></li>
-										<li><img src="img/slider/img3.jpg" alt="" /></li>
-										<li><img src="img/slider/img4.jpg" alt="" /></li>
-										<li><img src="img/slider/img5.jpg" alt="" /></li>
-										<li><img src="img/slider/img6.jpg" alt="" /></li>
-										<li><img src="img/slider/img7.jpg" alt="" /></li>
-										<li><img src="img/slider/img8.jpg" alt="" /></li>
-										<li><img src="img/slider/img9.jpg" alt="" /></li>
-										<li><img src="img/slider/img10.jpg" alt="" /></li>
-										<li><img src="img/slider/img11.jpg" alt="" /></li>
-										<li><img src="img/slider/img12.jpg" alt="" /></li>
-										<li><img src="img/slider/img13.jpg" alt="" /></li>
+										<li><img data-src="img/slider/img1.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img2.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img3.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img4.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img5.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img6.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img7.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img8.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img9.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img10.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img11.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img12.jpg" class="lazyload" alt="" /></li>
+										<li><img data-src="img/slider/img13.jpg" class="lazyload" alt="" /></li>
 									</ul>
 								</div>
 							</div>
-							<img src="img/imac.png" class="img-responsive" alt="" />
+							<img data-src="img/imac.png" class="lazyload img-responsive" alt="" />
 						</div>
 					</div>
 				</div>
@@ -236,7 +238,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 wow fadeInLeft" data-wow-delay="0.4s">
-					<img src="img/device-2.png" class="img-responsive" alt="" />
+					<img data-src="img/device-2.png" class="lazyload img-responsive" alt="" />
 				</div>
 				<div class="col-md-5 margintop40 wow fadeInRight" data-wow-delay="0.4s">
 					<div class="accordion clearfix" id="accordion1">
@@ -367,24 +369,24 @@
 								<div class="flexslider text-center">
 									<ul class="slides gallery" id="image">
 										
-										<li><a href="img/screenshot/img1-large.jpg" data-caption="Édition des couches"><img src="img/screenshot/img1.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img2-large.jpg" data-caption="Arborescence des données"><img src="img/screenshot/img2.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img3-large.jpg" data-caption="Visualisation des zones"><img src="img/screenshot/img3.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img4-large.jpg" data-caption="Placement sur la carte"><img src="img/screenshot/img4.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img5-large.jpg" data-caption="Affichage de plans 2D (pdf)"><img src="img/screenshot/img5.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img6-large.jpg" data-caption="Édition des labels"><img src="img/screenshot/img6.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img7-large.jpg" data-caption="Visualisation des couches"><img src="img/screenshot/img7.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img8-large.jpg" data-caption="Placement sur la carte"><img src="img/screenshot/img8.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img9-large.jpg" data-caption="Édition des matériaux"><img src="img/screenshot/img9.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img10-large.jpg" data-caption="Outil de mesure de distance"><img src="img/screenshot/img10.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img11-large.jpg" data-caption="Édition des notes"><img src="img/screenshot/img11.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img12-large.jpg" data-caption="Édition des vues"><img src="img/screenshot/img12.jpg" alt="" /></a></li>
-										<li><a href="img/screenshot/img13-large.jpg" data-caption="Focus sur un élément"><img src="img/screenshot/img13.jpg" alt="" /></a></li>
+										<li><a href="img/screenshot/img1-large.jpg" data-caption="Édition des couches"><img data-src="img/screenshot/img1.jpg" class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img2-large.jpg" data-caption="Arborescence des données"><img data-src="img/screenshot/img2.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img3-large.jpg" data-caption="Visualisation des zones"><img data-src="img/screenshot/img3.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img4-large.jpg" data-caption="Placement sur la carte"><img data-src="img/screenshot/img4.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img5-large.jpg" data-caption="Affichage de plans 2D (pdf)"><img data-src="img/screenshot/img5.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img6-large.jpg" data-caption="Édition des labels"><img data-src="img/screenshot/img6.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img7-large.jpg" data-caption="Visualisation des couches"><img data-src="img/screenshot/img7.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img8-large.jpg" data-caption="Placement sur la carte"><img data-src="img/screenshot/img8.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img9-large.jpg" data-caption="Édition des matériaux"><img data-src="img/screenshot/img9.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img10-large.jpg" data-caption="Outil de mesure de distance"><img data-src="img/screenshot/img10.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img11-large.jpg" data-caption="Édition des notes"><img data-src="img/screenshot/img11.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img12-large.jpg" data-caption="Édition des vues"><img data-src="img/screenshot/img12.jpg"class="lazyload" alt="" /></a></li>
+										<li><a href="img/screenshot/img13-large.jpg" data-caption="Focus sur un élément"><img data-src="img/screenshot/img13.jpg"class="lazyload" alt="" /></a></li>
 
 									</ul>
 								</div>
 							</div>
-							<img src="img/browser.png" class="img-responsive" alt="" />
+							<img data-src="img/browser.png" class="lazyload img-responsive" alt="" />
 						</div>
 					</div>
 				</div>
@@ -536,7 +538,7 @@
 								<h5>Fabien</h5>
 								<!-- <p><a href="#">99webpage owner</a></p> -->
 							</div>
-							<img src="img/testimoni/avatar1.png" alt="" />
+							<img class="lazyload" data-src="img/testimoni/avatar1.png" alt="" />
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -552,7 +554,7 @@
 								<h5>Emilie</h5>
 								<!-- <p><a href="#">99webpage founder</a></p> -->
 							</div>
-							<img src="img/testimoni/avatar2.png" alt="" />
+							<img class="lazyload" data-src="img/testimoni/avatar2.png" alt="" />
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -568,7 +570,7 @@
 								<h5>Kevin</h5>
 								<!-- <p><a href="#">99webpage manager</a></p> -->
 							</div>
-							<img src="img/testimoni/avatar3.png" alt="" />
+							<img class="lazyload" data-src="img/testimoni/avatar3.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -641,32 +643,32 @@
 							<ul>
 								<li>									
 									<a href="https://angular.io/" target="_blank" class="client-link">
-										<span class="logo-hover"><img src="img/client/angular-hover.png" alt="" /></span>
-										<img src="img/client/angular.png" class="angular-logo" alt="" />
+										<span class="logo-hover"><img data-src="img/client/angular-hover.png" alt="" class="lazyload"/></span>
+										<img data-src="img/client/angular.png" class="angular-logo lazyload" alt="" />
 									</a>
 								</li>
 								<li>									
 									<a href="https://threejs.org/" target="_blank" class="client-link">
-										<span class="logo-hover"><img src="img/client/three-hover.png" class="three-logo" alt="" /></span>
-										<img src="img/client/three.png" class="three-logo" alt="" />
+										<span class="logo-hover"><img data-src="img/client/three-hover.png" class="three-logo lazyload" alt="" /></span>
+										<img data-src="img/client/three.png" class="three-logo lazyload" alt="" />
 									</a>
 								</li>
 								<li>									
 									<a href="https://fr.wikipedia.org/wiki/WebGL" target="_blank" class="client-link">
-										<span class="logo-hover"><img src="img/client/webgl-hover.png" class="webgl-logo" alt="" /></span>
-										<img src="img/client/webgl.png" class="webgl-logo" alt="" />
+										<span class="logo-hover"><img data-src="img/client/webgl-hover.png" class="webgl-logo lazyload" alt="" /></span>
+										<img data-src="img/client/webgl.png" class="webgl-logo lazyload" alt="" />
 									</a>
 								</li>
 								<li>									
 									<a href="https://www.mapbox.com/" target="_blank" class="client-link">
-										<span class="logo-hover"><img src="img/client/mapbox-hover.png" class="mapbox-logo" alt="" /></span>
-										<img src="img/client/mapbox.png" class="mapbox-logo" alt="" />
+										<span class="logo-hover"><img data-src="img/client/mapbox-hover.png" class="mapbox-logo lazyload" alt="" /></span>
+										<img data-src="img/client/mapbox.png" class="mapbox-logo lazyload" alt="" />
 									</a>
 								</li>				
 								<li class="last">									
 									<a href="https://bimserver.center/fr" target="_blank" class="client-link">
-										<span class="logo-hover"><img src="img/client/bimServer-hover.png" alt="" class="bimServer-logo"/></span>
-										<img src="img/client/bimServer.png" class="bimServer-logo" alt="" />
+										<span class="logo-hover"><img data-src="img/client/bimServer-hover.png" alt="" class="bimServer-logo lazyload"/></span>
+										<img data-src="img/client/bimServer.png" class="bimServer-logo lazyload" alt="" />
 									</a>
 								</li>							
 							</ul>
