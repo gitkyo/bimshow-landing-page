@@ -105,7 +105,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">BIMSHOW<img src="img/logo-1.png" alt="" /></a>
+					<a class="navbar-brand" href="http://bimshow.io/">BIMSHOW<img src="img/logo-1.png" alt="" /></a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -293,7 +293,7 @@
 							</div>
 							<div id="collapse3" class="accordion-body collapse">
 								<div class="accordion-inner">
-									<p>
+									<p class="text-justify">
 									BIMSHOW est en statut bêta, il est donc seulement accessible en version de <strong>démonstration</strong> pour le grand public. Nous souhaitons reccueillir les <strong>retours</strong> d'experiences de nos bêta testeurs afin de garantir un produit qui correspond à vos attentes.
 									
 									<br/>
@@ -736,17 +736,17 @@
 							<ul class="listForm">
 								<li>
 									<i class="pe-7s-users"></i>
-									<input class="form-control input-name" type="text" name="name" data-rule="required" data-msg="Required field" placeholder="Nom" />
+									<input class="form-control input-name" type="text" name="name" data-rule="required" data-msg="Champs requis" placeholder="Nom" />
 									<div class="validation"></div>
 								</li>
 								<li>
 									<i class="pe-7s-mail"></i>
-									<input class="form-control input-email" type="text" name="email" data-rule="email" data-msg="Please enter a valid email" placeholder="Email" />	
+									<input class="form-control input-email" type="text" name="email" data-rule="email" data-msg="Veuillez entrer une adresse valide" placeholder="Email" />	
 									<div class="validation"></div>
 								</li>
 								<li class="push">
 									<i class="pe-7s-paper-plane"></i>
-									<textarea class="form-control input-message" rows="6" name="message" data-rule="required" data-msg="Please write something for us" placeholder="Votre message"></textarea>
+									<textarea class="form-control input-message" rows="6" name="message" data-rule="required" data-msg="Veuillez rédiger un message" placeholder="Votre message"></textarea>
 									<div class="validation"></div>
 								</li>
 								<li class="push text-center">
@@ -808,8 +808,8 @@
 
 	function init() {
 		var wCanvas = $(window).width() / 12;
-
-	    canvas = document.createElement('canvas');
+generateCanvas();
+	    /*canvas = document.createElement('canvas');
 	    document.body.appendChild(canvas);
 	    ctx = canvas.getContext("2d");
 
@@ -817,7 +817,7 @@
 	    canvas.height = sh * pixelRatio;
 	    canvas.style.width = sw + 'px';
 	    canvas.style.height = sh + 'px';
-	    ctx.scale(pixelRatio, pixelRatio);
+	    ctx.scale(pixelRatio, pixelRatio);*/
 
 	    leon = new LeonSans({
 	        text: 'BIMSHOW.IO',
@@ -925,6 +925,7 @@
 		
 			var rand = getRandomInt(4);
 			
+			alert("mobile version");
 			console.log("mobile version ");
 			console.log(rand);
 
@@ -934,6 +935,7 @@
 			else if(rand == 3) $('.typeEffect').append('Obtenez plus de ventes');
 		
 		}else{
+			alert("Desktop version ");
 			//start typed js function
 			var typed = new Typed('.typeEffect', options);
 		}
