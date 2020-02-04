@@ -35,9 +35,9 @@ CSS structure
 22. Custom responsive
 
 ============================================================== */
-div.navbar-right{
+/* div.navbar-right{
 	visibility: hidden;
-}
+} */
 div.tarteaucitronAlertSmallBottom{
 	display: none !important;
 }
@@ -58,8 +58,23 @@ canvas{
     z-index: 9999999999;
     /*cursor: none;*/
 }
-h3.pricingTitle{
-	
+section#features h3{
+	font-size: 25px;
+}
+.home-slider .flex-pauseplay{
+	display : none !important;
+}
+a.navbar-brand{
+	font-size: 23px;
+}
+.navbar-right{
+	padding: 4px 0 0 0;
+}
+button.navbar-toggle{
+	border-color : #9e9e9e !important;
+}
+button.navbar-toggle .icon-bar{
+	background-color: #9e9e9e !important;
 }
 /*
 Home
@@ -78,6 +93,7 @@ Home
 	line-height:68px;
 	padding-bottom: 45px;
 	color:#fff;
+	min-height: 320px;
 }
 .home-wrapper h1 span{
 	font-weight:300;
