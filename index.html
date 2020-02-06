@@ -68,6 +68,9 @@
 
 	<!-- viewer style -->	
 	<link rel="stylesheet" href="node_modules/baguettebox.js/dist/baguetteBox.min.css">
+
+	<!-- Fancybox, a lightbox plugin -->	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	
 	<!-- intro bimshow effect -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
@@ -79,8 +82,6 @@
   </head>
 
   <body>
-
-  	
 
 
 	<!-- Start preloading -->	
@@ -241,7 +242,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 wow fadeInLeft" data-wow-delay="0.4s">
-					<img data-src="img/device-2.png" class="lazyload img-responsive" alt="" />
+																
+					<a data-fancybox="gallery" href="https://www.youtube.com/embed/sRDL2He-joY">
+						<div class="myImgWithIframe">
+							<img data-src="img/device-3.png" class="lazyload img-responsive" alt="" />								
+						</div>
+					</a>						
+
 				</div>
 				<div class="col-md-5 margintop40 wow fadeInRight" data-wow-delay="0.4s">
 					<div class="accordion clearfix" id="accordion1">
@@ -260,7 +267,7 @@
 									<br/>
 									
 									Pour en savoir plus :<br/>
-									<a href="bimshow-presentation-fr.pdf" class="btn btn-primary">Télécharger la plaquette</a>  
+									<a href="bimshow-presentation-fr.pdf" class="btn btn-primary">Voir la plaquette (pdf)</a>  
 									
 									</p>
 								</div>
@@ -934,6 +941,7 @@
 		var typed = new Typed('.typeEffect', options);
 	}
 
+	
 	</script>
 
 	<!-- cookie management -->    
@@ -1022,6 +1030,9 @@
 		
 	<!-- Contact validation -->
 	<script src="js/validation.js"></script>
+	
+	<!-- Fancybox - a lightbox plugin -->
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 	
 	<!-- Customn javascript -->
 	<script src="js/custom.js"></script>

@@ -23,6 +23,8 @@
 	
 	baguetteBox.run('.gallery');
 
+	
+
 
 
 	/* gellerie lightbox effect

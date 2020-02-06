@@ -76,6 +76,18 @@ button.navbar-toggle{
 button.navbar-toggle .icon-bar{
 	background-color: #9e9e9e !important;
 }
+div.myImgWithIframe{
+	position: relative;
+}
+a.flex-play{
+	box-shadow: 2px 7px 12px #000;
+    border-radius: 30px;
+}
+div.flex-pauseplay{
+	    position: absolute;
+    top: 174px;
+    left: 48%;
+}
 /*
 Home
 =========================== */
