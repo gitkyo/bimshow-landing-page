@@ -23,8 +23,13 @@
 	
 	baguetteBox.run('.gallery');
 
-	
+	if( mobilecheck() ){  
+		$('.navbar-collapse li a').click(function(event) {
+			/* Act on the event */		
+			$("button.navbar-toggle").trigger('click');
 
+		});
+	}
 
 
 	/* gellerie lightbox effect

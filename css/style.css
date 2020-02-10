@@ -1332,3 +1332,10 @@ Custom responsive
 		display:block;
 	}
 }
+
+
+@media (max-width: 400px){
+	.home-wrapper h1 {
+	    font-size: 50px;
+	}
+}
