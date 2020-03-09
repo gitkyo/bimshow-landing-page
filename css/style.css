@@ -38,6 +38,20 @@ CSS structure
 /* div.navbar-right{
 	visibility: hidden;
 } */
+div.selectpicker{
+	display: inline-block;
+    top: 14px;
+    position: relative;
+}
+div.selectpicker .active{
+	font-weight:bold;
+	text-decoration: underline;
+	pointer-events: none;
+	opacity: 0.5;
+}
+div.selectpicker a{
+	display: block;
+}
 div.tarteaucitronAlertSmallBottom{
 	display: none !important;
 }
@@ -1154,7 +1168,7 @@ Custom responsive
 	.navbar-default .navbar-nav li a:focus{
 		font-size:14px;
 		line-height:18px;
-		padding:30px 15px 30px 15px;
+		padding:30px 10px 30px 10px;
 	}
 	.slider-wrapper{
 		width:867px;
